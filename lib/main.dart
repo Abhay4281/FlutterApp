@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
+import 'package:flutter_application_1/utilis/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -26,14 +27,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily ,
         ),
+        debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         ),
       initialRoute: "/",
       routes: { // routes likha h to home: homePage( ) ye htana pdhega verna chlega nhi
         "/":(context) => LoginPage(),
-        "/home":(context) => HomePage(),
-        "/login":(context) => LoginPage()
+        MyRoutes.homeRoute:(context) => HomePage(),
+        MyRoutes.loginRoute:(context) => LoginPage()
       },
     );
   }
